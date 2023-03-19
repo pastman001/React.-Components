@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import { AboutUs } from './components/AboutUs';
 import { MainComponent } from './components/MainComponent';
 import { Navigation } from './components/Navigation';
-import { UnknowPage } from './components/UnknowPage';
+import { UnknownPage } from './components/UnknownPage';
 import './style.css';
 
 export class App extends React.Component {
@@ -17,7 +17,7 @@ export class App extends React.Component {
         <Routes>
           <Route path="/" element={<MainComponent />} />
           <Route path="/aboutUs" element={<AboutUs />} />
-          <Route path="*" element={<UnknowPage />} />
+          <Route path="*" element={<UnknownPage />} />
         </Routes>
       </div>
     );

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export class UnknowPage extends React.Component {
+export class UnknownPage extends React.Component {
   constructor(props: object) {
     super(props);
   }
