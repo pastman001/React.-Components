@@ -3,14 +3,18 @@ import React from 'react';
 export class SearchBar extends React.Component<object, { searchArea: string }> {
   constructor(props: object) {
     super(props);
-    this.state = { searchArea: '' };
+    const localStorageSearchArea = localStorage.getItem('searchArea');
+    this.state = { searchArea: localStorageSearchArea !== null ? localStorageSearchArea : '' };
+  }
+
+  componentWillUnmount() {
+    localStorage.setItem('searchArea', this.state.searchArea);
   }
   changeHandler: React.ChangeEventHandler<HTMLInputElement> = (event) => {
     this.setState({ searchArea: event.target.value });
   };
 
   clickHandler = () => {
-    localStorage.setItem('searchArea', this.state.searchArea);
     this.setState({ searchArea: '' });
   };
   render(): React.ReactNode {
