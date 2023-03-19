@@ -1,7 +1,8 @@
 import React from 'react';
-import { Link, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { AboutUs } from './components/AboutUs';
-import { Main } from './components/Main';
+import { MainComponent } from './components/MainComponent';
+import { Navigation } from './components/Navigation';
 import { UnknowPage } from './components/UnknowPage';
 import './style.css';
 
@@ -12,16 +13,9 @@ export class App extends React.Component {
   render(): React.ReactNode {
     return (
       <div className="main__container">
-        <header>
-          <Link className="link__button" to="/">
-            Main
-          </Link>
-          <Link className="link__button" to="/aboutUs">
-            About Us
-          </Link>
-        </header>
+        <Navigation />
         <Routes>
-          <Route path="/" element={<Main />} />
+          <Route path="/" element={<MainComponent />} />
           <Route path="/aboutUs" element={<AboutUs />} />
           <Route path="*" element={<UnknowPage />} />
         </Routes>
