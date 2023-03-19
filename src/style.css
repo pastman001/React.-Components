@@ -31,9 +31,10 @@ header{
     font-size: 10px;
 }
 img{
+    display: block;
     max-width: 100px;
     max-height: 100px;
-    margin: 0 25%;
+    margin: 0 auto;
 }
 .search__container{
     margin: 10px;
