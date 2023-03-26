@@ -1,11 +1,22 @@
 import React from 'react';
 
-export class Name extends React.Component {
-  constructor(props: object) {
+type PropsInput = {
+  text: string;
+  inputName: string;
+  linkToInput: React.RefObject<HTMLInputElement>;
+};
+export class Name extends React.Component<PropsInput> {
+  constructor(props: PropsInput) {
     super(props);
   }
 
   render(): React.ReactNode {
-    return <></>;
+    return (
+      <div>
+        {this.props.text}
+        <input type="text" name={this.props.inputName} ref={this.props.linkToInput} />
+        {false && <div>You have filled in the field incorrectly</div>}
+      </div>
+    );
   }
 }

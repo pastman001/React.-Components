@@ -8,9 +8,6 @@ import { UnknownPage } from './components/UnknownPage';
 import './style.css';
 
 export class App extends React.Component {
-  constructor(props: object) {
-    super(props);
-  }
   render(): React.ReactNode {
     return (
       <div className="main__container">
