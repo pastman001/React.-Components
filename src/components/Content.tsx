@@ -4,11 +4,9 @@ import { ArrayList } from '../data/arr';
 type PropsType = {
   arrList: ArrayList;
 };
-export class Content extends React.Component<PropsType> {
-  constructor(props: PropsType) {
-    super(props);
-  }
-  mainContent = this.props.arrList.map((item, index) => {
+
+export const Content = (props: PropsType) => {
+  const mainContent = props.arrList.map((item, index) => {
     if (item.imgUrl !== undefined) {
       return (
         <div className="container" key={index}>
@@ -44,7 +42,5 @@ export class Content extends React.Component<PropsType> {
       );
     }
   });
-  render(): React.ReactNode {
-    return <div className="grid__container">{this.mainContent}</div>;
-  }
-}
+  return <div className="grid__container">{mainContent}</div>;
+};
