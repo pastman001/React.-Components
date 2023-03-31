@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrayList } from '../data/arr';
+import { ArrayList } from '../../data/arr';
 
 type PropsType = {
   arrList: ArrayList;

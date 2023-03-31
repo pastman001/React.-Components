@@ -7,11 +7,7 @@ header{
     min-width: 500px;
     min-height: 500px;
 }
-.link__button{
-    margin: 10px;
-    padding: 10px;
-    border: 1px black solid;
-}
+
 .grid__container{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;   
@@ -50,11 +46,4 @@ img{
 .search__button{
     min-width: 20%;
 }
-.about__container{
-    padding: 10% 20%;
-}
-.not__found{
-    font-size: 40px;
-    font-style: oblique;
-    text-align: center;
-}
+

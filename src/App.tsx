@@ -1,10 +1,10 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { AboutUs } from './components/AboutUs';
-import { Form } from './components/Form';
-import { MainComponent } from './components/MainComponent';
-import { Navigation } from './components/Navigation';
-import { UnknownPage } from './components/UnknownPage';
+import { AboutUs } from './components/AboutUs/AboutUs';
+import { Form } from './components/Form/Form';
+import { MainComponent } from './components/MainComponent/MainComponent';
+import { Navigation } from './components/Navigation/Navigation';
+import { UnknownPage } from './components/UnknownPage/UnknownPage';
 import './style.css';
 
 export class App extends React.Component {

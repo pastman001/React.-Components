@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 export const SearchBar = () => {
   const localStorageSearchArea = localStorage.getItem('searchArea');
   const [state, setState] = useState({
-    searchArea: localStorageSearchArea !== null ? localStorageSearchArea : '',
+    searchArea: localStorageSearchArea !== null ? localStorageSearchArea : '', //можно избежать тернарника
   });
   useEffect(() => {}, []);
   /*componentWillUnmount() {
