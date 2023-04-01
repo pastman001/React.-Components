@@ -1,19 +1,16 @@
 import React, { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { Birthday } from './BirthdayInput/Birthday';
-import { Checkbox } from './CheckboxInput/Checkbox';
-import { Name } from './NameInput/Name';
-import { Option } from './OptionInput/Option';
-import { Radio } from './RadioInput/Radio';
-import { Surname } from './SurnameInput/Surname';
+import { arrList, Birthday, Checkbox, Name, Option, Radio, Surname } from './index';
+import './style.css';
 
 type Inputs = {
   name: string;
   surname: string;
   birthday: string;
-  option: string;
+  select: string;
   radio: string;
   checkbox: boolean;
+  imgFile: any;
 };
 
 export const Form = () => {
@@ -26,8 +23,8 @@ export const Form = () => {
   } = useForm<Inputs>();
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
-    console.log(data);
     setInputValue({ name: '', surname: '' });
+    arrList.push({ ...data, imgFile: data.imgFile[0] });
   };
 
   const changeHandler = (e: React.FormEvent<HTMLInputElement>) => {
@@ -52,6 +49,7 @@ export const Form = () => {
       <Option register={register} errors={errors} />
       <Radio register={register} />
       <Checkbox register={register} errors={errors} />
+      <input type="file" {...register('imgFile', { required: true })} />
       <input type="submit" />
     </form>
   );

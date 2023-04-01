@@ -2,13 +2,15 @@ import React, { useEffect, useState } from 'react';
 //<object, { searchArea: string }>
 export const SearchBar = () => {
   const localStorageSearchArea = localStorage.getItem('searchArea');
+
   const [state, setState] = useState({
     searchArea: localStorageSearchArea !== null ? localStorageSearchArea : '', //можно избежать тернарника
   });
-  useEffect(() => {}, []);
-  /*componentWillUnmount() {
-    localStorage.setItem('searchArea', this.state.searchArea);
-  }*/
+
+  useEffect(() => {
+    localStorage.setItem('searchArea', state.searchArea);
+  });
+
   const changeHandler: React.ChangeEventHandler<HTMLInputElement> = (event) => {
     setState({ searchArea: event.target.value });
   };

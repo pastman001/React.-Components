@@ -1,0 +1,1 @@
+export { arrList } from './arr';
