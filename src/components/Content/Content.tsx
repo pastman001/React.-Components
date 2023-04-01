@@ -1,12 +1,8 @@
 import React from 'react';
-import { ArrayList } from '../../data/arr';
+import { Aaaa } from '../../App';
 
-type PropsType = {
-  arrList: ArrayList;
-};
-
-export const Content = (props: PropsType) => {
-  const mainContent = props.arrList.map((item, index) => {
+export const Content: React.FC<Aaaa> = ({ store }) => {
+  const mainContent = store.map((item, index) => {
     if (item.imgUrl !== undefined) {
       return (
         <div className="container" key={index}>

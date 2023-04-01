@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { ChangeEvent } from 'react';
+import { A } from '../Form';
+interface F extends A {
+  selectChangeHandler: (event: ChangeEvent<HTMLSelectElement>) => void;
+}
 
-export const Option = (props: any) => {
-  const { register, errors } = props;
+export const Option: React.FC<F> = ({ register, inputValue, selectChangeHandler, errors }) => {
   return (
     <div>
-      <select {...register('option', { required: true })}>
+      <select
+        {...register('select', { required: true })}
+        value={inputValue.select}
+        onChange={selectChangeHandler}
+      >
         <option>select option</option>
         <option value="1">typo 1</option>
         <option value="2">typo 2</option>
@@ -12,7 +19,7 @@ export const Option = (props: any) => {
         <option value="4">typo 4</option>
         <option value="5">typo 5</option>
       </select>
-      {errors.option && <div className="Warning">This field is required</div>}
+      {errors.select && <div className="Warning">This field is required</div>}
     </div>
   );
 };

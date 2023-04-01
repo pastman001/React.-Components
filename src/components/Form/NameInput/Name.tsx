@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { ChangeEvent } from 'react';
+import { A } from '../Form';
+interface C extends A {
+  changeHandler: (event: ChangeEvent<HTMLInputElement>) => void;
+}
 
-export const Name = (props: any) => {
-  const { register, inputValue, changeHandler, errors } = props;
+export const Name: React.FC<C> = ({ register, inputValue, changeHandler, errors }) => {
   return (
     <div>
       <label>
