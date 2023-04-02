@@ -5,7 +5,7 @@ export const SearchBar = () => {
   const localStorageSearchArea = localStorage.getItem('searchArea');
 
   const [state, setState] = useState({
-    searchArea: localStorageSearchArea !== null ? localStorageSearchArea : '', //можно избежать тернарника
+    searchArea: localStorageSearchArea !== null ? localStorageSearchArea : '',
   });
 
   useEffect(() => {
