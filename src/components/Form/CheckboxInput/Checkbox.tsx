@@ -1,6 +1,6 @@
 import React, { ChangeEvent } from 'react';
-import { InterfaceBase } from '../Form';
-interface InterfaceCheckbox extends InterfaceBase {
+import { ComponentBaseInterface } from '../Form';
+interface InterfaceCheckbox extends ComponentBaseInterface {
   checkboxChangeHandler: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 export const Checkbox: React.FC<InterfaceCheckbox> = ({

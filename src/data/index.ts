@@ -1,1 +1,1 @@
-export { arrList } from './Store';
+export { storeArray } from './Store';

@@ -1,4 +1,4 @@
-export interface ArrayBase {
+interface ArrayBase {
   imgUrl?: string;
   name: string;
   surname: string;
@@ -13,7 +13,7 @@ export interface ArrayMain extends ArrayBase {
 export interface ArraySubmit extends ArrayBase {
   imgFile?: (MediaSource | Blob)[];
 }
-export const arrList: ArrayMain[] = [
+export const storeArray: ArrayMain[] = [
   {
     imgUrl: '/1.jpg',
     name: 'Bob',

@@ -1,5 +1,5 @@
+import { StoreOnly } from 'App';
 import React from 'react';
-import { StoreOnly } from '../../App';
 
 export const Content: React.FC<StoreOnly> = ({ store }) => {
   const mainContent = store.map((item, index) => {

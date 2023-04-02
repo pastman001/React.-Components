@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import './style.css';
+
 export const SearchBar = () => {
   const localStorageSearchArea = localStorage.getItem('searchArea');
 

@@ -1,6 +1,6 @@
 import React, { ChangeEvent } from 'react';
-import { InterfaceBase } from '../Form';
-interface InterfaceInput extends InterfaceBase {
+import { ComponentBaseInterface } from '../Form';
+interface InterfaceInput extends ComponentBaseInterface {
   changeHandler: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 

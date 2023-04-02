@@ -1,6 +1,6 @@
 import React, { ChangeEvent } from 'react';
-import { InterfaceBase } from '../Form';
-interface InterfaceSelect extends InterfaceBase {
+import { ComponentBaseInterface } from '../Form';
+interface InterfaceSelect extends ComponentBaseInterface {
   selectChangeHandler: (event: ChangeEvent<HTMLSelectElement>) => void;
 }
 
@@ -18,11 +18,11 @@ export const Option: React.FC<InterfaceSelect> = ({
         onChange={selectChangeHandler}
       >
         <option>select option</option>
-        <option value="1">typo 1</option>
-        <option value="2">typo 2</option>
-        <option value="3">typo 3</option>
-        <option value="4">typo 4</option>
-        <option value="5">typo 5</option>
+        <option value="1">option 1</option>
+        <option value="2">option 2</option>
+        <option value="3">option 3</option>
+        <option value="4">option 4</option>
+        <option value="5">option 5</option>
       </select>
       {errors.select && <div className="Warning">This field is required</div>}
     </div>

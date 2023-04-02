@@ -1,7 +1,6 @@
+import { StoreOnly } from 'App';
 import React from 'react';
-import { StoreOnly } from '../../App';
-import { Content } from '../Content/Content';
-import { SearchBar } from '../SearchBar/SearchBar';
+import { Content, SearchBar } from './';
 
 export const MainComponent: React.FC<StoreOnly> = ({ store }) => {
   return (
