@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { Arr, ArrayList } from './data/arr';
+import { ArrayMain } from './data/Store';
 import { AboutUs, Form, MainComponent, Navigation, UnknownPage, arrList } from './index';
 import './style.css';
 
-export type Aaa = {
-  store: Array<Arr>;
-  setStore: React.Dispatch<React.SetStateAction<ArrayList>>;
+export type StoreState = {
+  store: Array<ArrayMain>;
+  setStore: React.Dispatch<React.SetStateAction<ArrayMain[]>>;
 };
-export type Aaaa = { store: Array<Arr> };
+export type StoreOnly = { store: Array<ArrayMain> };
 
 export const App = () => {
   const [store, setStore] = useState(arrList);

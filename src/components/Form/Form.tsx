@@ -1,17 +1,17 @@
-import React, { ChangeEvent, FC, useState } from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import { FieldErrors, SubmitHandler, UseFormRegister, useForm } from 'react-hook-form';
-import { Aaa } from '../../App';
-import { Arr, ArrSubmit } from '../../data/arr';
+import { StoreState } from '../../App';
+import { ArrayMain, ArraySubmit } from '../../data/Store';
 import { Birthday, Checkbox, Name, Option, Radio, Surname } from './index';
 import './style.css';
 
-export interface A {
-  inputValue: Arr;
-  register: UseFormRegister<ArrSubmit>;
-  errors: FieldErrors<ArrSubmit>;
+export interface InterfaceBase {
+  inputValue: ArrayMain;
+  register: UseFormRegister<ArraySubmit>;
+  errors: FieldErrors<ArraySubmit>;
 }
-export const Form: FC<Aaa> = ({ store, setStore }) => {
-  const [inputValue, setInputValue] = useState<Arr>({
+export const Form: React.FC<StoreState> = ({ store, setStore }) => {
+  const [inputValue, setInputValue] = useState<ArrayMain>({
     name: '',
     surname: '',
     birthday: '',
@@ -24,9 +24,9 @@ export const Form: FC<Aaa> = ({ store, setStore }) => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<ArrSubmit>();
+  } = useForm<ArraySubmit>();
 
-  const onSubmit: SubmitHandler<ArrSubmit> = ({ imgFile, ...data }) => {
+  const onSubmit: SubmitHandler<ArraySubmit> = ({ imgFile, ...data }) => {
     setInputValue({ name: '', surname: '', birthday: '', select: '', radio: '', checkbox: false });
     const imgData = { ...data, imgFile: imgFile?.[0] };
     setStore([...store, imgData]);

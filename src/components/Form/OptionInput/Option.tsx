@@ -1,10 +1,15 @@
 import React, { ChangeEvent } from 'react';
-import { A } from '../Form';
-interface F extends A {
+import { InterfaceBase } from '../Form';
+interface InterfaceSelect extends InterfaceBase {
   selectChangeHandler: (event: ChangeEvent<HTMLSelectElement>) => void;
 }
 
-export const Option: React.FC<F> = ({ register, inputValue, selectChangeHandler, errors }) => {
+export const Option: React.FC<InterfaceSelect> = ({
+  register,
+  inputValue,
+  selectChangeHandler,
+  errors,
+}) => {
   return (
     <div>
       <select

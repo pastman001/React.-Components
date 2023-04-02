@@ -1,7 +1,7 @@
 import React from 'react';
-import { Aaaa } from '../../App';
+import { StoreOnly } from '../../App';
 
-export const Content: React.FC<Aaaa> = ({ store }) => {
+export const Content: React.FC<StoreOnly> = ({ store }) => {
   const mainContent = store.map((item, index) => {
     if (item.imgUrl !== undefined) {
       return (

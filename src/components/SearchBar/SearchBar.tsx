@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-//<object, { searchArea: string }>
 export const SearchBar = () => {
   const localStorageSearchArea = localStorage.getItem('searchArea');
 

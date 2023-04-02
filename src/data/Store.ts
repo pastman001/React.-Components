@@ -1,4 +1,4 @@
-export interface ArrBase {
+export interface ArrayBase {
   imgUrl?: string;
   name: string;
   surname: string;
@@ -7,14 +7,13 @@ export interface ArrBase {
   checkbox: boolean;
   radio: string;
 }
-export interface Arr extends ArrBase {
+export interface ArrayMain extends ArrayBase {
   imgFile?: MediaSource | Blob;
 }
-export interface ArrSubmit extends ArrBase {
+export interface ArraySubmit extends ArrayBase {
   imgFile?: (MediaSource | Blob)[];
 }
-export type ArrayList = Arr[];
-export const arrList: ArrayList = [
+export const arrList: ArrayMain[] = [
   {
     imgUrl: '/1.jpg',
     name: 'Bob',

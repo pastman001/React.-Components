@@ -1,9 +1,14 @@
 import React, { ChangeEvent } from 'react';
-import { A } from '../Form';
-interface E extends A {
+import { InterfaceBase } from '../Form';
+interface InterfaceCheckbox extends InterfaceBase {
   checkboxChangeHandler: (event: ChangeEvent<HTMLInputElement>) => void;
 }
-export const Checkbox: React.FC<E> = ({ register, inputValue, checkboxChangeHandler, errors }) => {
+export const Checkbox: React.FC<InterfaceCheckbox> = ({
+  register,
+  inputValue,
+  checkboxChangeHandler,
+  errors,
+}) => {
   return (
     <div>
       Are you sure?

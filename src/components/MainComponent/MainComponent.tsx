@@ -1,9 +1,9 @@
 import React from 'react';
-import { Aaaa } from '../../App';
+import { StoreOnly } from '../../App';
 import { Content } from '../Content/Content';
 import { SearchBar } from '../SearchBar/SearchBar';
 
-export const MainComponent: React.FC<Aaaa> = ({ store }) => {
+export const MainComponent: React.FC<StoreOnly> = ({ store }) => {
   return (
     <div>
       <SearchBar />
