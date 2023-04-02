@@ -1,0 +1,1 @@
+export { storeArray } from './Store';
