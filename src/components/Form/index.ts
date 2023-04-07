@@ -1,4 +1,3 @@
-export { storeArray } from '../';
 export { Birthday } from './BirthdayInput';
 export { Checkbox } from './CheckboxInput';
 export { Form } from './Form';

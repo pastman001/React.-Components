@@ -1,5 +1,7 @@
 import React, { ChangeEvent } from 'react';
+// eslint-disable-next-line import/no-cycle
 import { ComponentBaseInterface } from '../Form';
+
 interface InterfaceInput extends ComponentBaseInterface {
   changeHandler: (event: ChangeEvent<HTMLInputElement>) => void;
 }
@@ -12,23 +14,25 @@ export const Radio: React.FC<InterfaceInput> = ({
   return (
     <>
       <div>
-        <label>
+        <label htmlFor="1">
           Man
           <input
+            id="1"
             {...register('radio')}
             type="radio"
             value="man"
-            checked={inputValue.radio === 'man' ? true : false}
+            checked={inputValue.radio === 'man'}
             onChange={changeHandler}
           />
         </label>
-        <label>
+        <label htmlFor="2">
           Woman
           <input
+            id="2"
             {...register('radio')}
             type="radio"
             value="woman"
-            checked={inputValue.radio === 'woman' ? true : false}
+            checked={inputValue.radio === 'woman'}
             onChange={changeHandler}
           />
         </label>

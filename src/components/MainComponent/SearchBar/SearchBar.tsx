@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './style.css';
 
-export const SearchBar = () => {
+export function SearchBar() {
   const localStorageSearchArea = localStorage.getItem('searchArea');
 
   const [state, setState] = useState({
@@ -30,9 +30,9 @@ export const SearchBar = () => {
         onChange={changeHandler}
         value={state.searchArea}
       />
-      <button className="search__button" onClick={clickHandler}>
+      <button className="search__button" onClick={clickHandler} type="button">
         click me
       </button>
     </div>
   );
-};
+}

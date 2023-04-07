@@ -1,8 +1,7 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import './style.css';
 
-export const Navigation = () => {
+export function Navigation() {
   return (
     <header>
       <Link className="link__button" to="/">
@@ -16,4 +15,4 @@ export const Navigation = () => {
       </Link>
     </header>
   );
-};
+}

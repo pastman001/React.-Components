@@ -1,8 +1,8 @@
-import { StoreState } from 'App';
-import { ArrayMain, ArraySubmit } from 'data/Store';
-import React, { ChangeEvent, useEffect, useState } from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import { FieldErrors, SubmitHandler, UseFormRegister, useForm } from 'react-hook-form';
-import { Birthday, Checkbox, Name, Option, Radio, Surname } from './';
+import { Birthday, Checkbox, Name, Option, Radio, Surname } from '.';
+import { StoreState } from '../../App';
+import { ArrayMain, ArraySubmit } from '../../data/types/type';
 import { CardList } from './CardList';
 import './style.css';
 
@@ -23,9 +23,6 @@ export const Form: React.FC<StoreState> = ({ store, setStore }) => {
   });
 
   const [cardsList, setCardsLits] = useState<ArrayMain[]>([]);
-  useEffect(() => {
-    console.log(cardsList);
-  }, [cardsList]);
 
   const {
     register,
@@ -34,18 +31,31 @@ export const Form: React.FC<StoreState> = ({ store, setStore }) => {
   } = useForm<ArraySubmit>();
 
   const onSubmit: SubmitHandler<ArraySubmit> = ({ imgFile, ...data }) => {
-    setInputValue({ name: '', surname: '', birthday: '', select: '', radio: '', checkbox: false });
+    setInputValue({
+      name: '',
+      surname: '',
+      birthday: '',
+      select: '',
+      radio: '',
+      checkbox: false,
+    });
     const imgData = { ...data, imgFile: imgFile?.[0] };
     setStore([...store, imgData]);
     setCardsLits([...cardsList, imgData]);
   };
 
   const changeHandler = (event: ChangeEvent<HTMLInputElement>) => {
-    setInputValue({ ...inputValue, [event.currentTarget.name]: event.currentTarget.value });
+    setInputValue({
+      ...inputValue,
+      [event.currentTarget.name]: event.currentTarget.value,
+    });
   };
 
   const selectChangeHandler = (event: ChangeEvent<HTMLSelectElement>) => {
-    setInputValue({ ...inputValue, [event.currentTarget.name]: event.currentTarget.value });
+    setInputValue({
+      ...inputValue,
+      [event.currentTarget.name]: event.currentTarget.value,
+    });
   };
 
   const checkboxChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {

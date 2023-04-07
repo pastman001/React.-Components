@@ -1,12 +1,15 @@
-import { StoreOnly } from 'App';
+/* eslint-disable consistent-return */
+/* eslint-disable array-callback-return */
+/* eslint-disable react/no-array-index-key */
 import React from 'react';
+import { StoreOnly } from '../../../data/types/type';
 
 export const Content: React.FC<StoreOnly> = ({ store }) => {
   const mainContent = store.map((item, index) => {
     if (item.imgUrl !== undefined) {
       return (
         <div className="container" key={index}>
-          <img src={item.imgUrl} />
+          <img src={item.imgUrl} alt="text" />
           <div className="container__header">{item.name}</div>
           <div className="container__content">{item.surname}</div>
           <div>{item.birthday}</div>
@@ -23,7 +26,7 @@ export const Content: React.FC<StoreOnly> = ({ store }) => {
     if (item.imgFile !== undefined) {
       return (
         <div className="container" key={index}>
-          <img src={URL.createObjectURL(item.imgFile)} />
+          <img src={URL.createObjectURL(item.imgFile)} alt="text" />
           <div className="container__header">{item.name}</div>
           <div className="container__content">{item.surname}</div>
           <div>{item.birthday}</div>

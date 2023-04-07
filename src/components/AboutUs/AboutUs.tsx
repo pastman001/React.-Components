@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.css';
 
-export const AboutUs = () => {
+export function AboutUs() {
   return <div className="about__container">About us</div>;
-};
+}

@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { AboutUs, Form, MainComponent, Navigation, UnknownPage, storeArray } from './';
+import { AboutUs, Form, MainComponent, Navigation, UnknownPage, storeArray } from '.';
+import type { ArrayMain } from './data/types/type';
 import './style.css';
-import { ArrayMain } from 'data/Store';
 
 export type StoreState = {
   store: Array<ArrayMain>;
   setStore: React.Dispatch<React.SetStateAction<ArrayMain[]>>;
 };
-export type StoreOnly = { store: ArrayMain[] };
 
-export const App = () => {
+export function App() {
   const [store, setStore] = useState(storeArray);
   return (
     <div className="main__container">
@@ -23,4 +22,4 @@ export const App = () => {
       </Routes>
     </div>
   );
-};
+}

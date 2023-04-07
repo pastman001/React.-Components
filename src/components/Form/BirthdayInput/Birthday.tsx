@@ -1,5 +1,7 @@
 import React, { ChangeEvent } from 'react';
+// eslint-disable-next-line import/no-cycle
 import { ComponentBaseInterface } from '../Form';
+
 interface InterfaceInput extends ComponentBaseInterface {
   changeHandler: (event: ChangeEvent<HTMLInputElement>) => void;
 }
@@ -12,9 +14,10 @@ export const Birthday: React.FC<InterfaceInput> = ({
 }) => {
   return (
     <div>
-      <label>
+      <label htmlFor="ok">
         Enter you name
         <input
+          id="ok"
           {...register('birthday', { required: true })}
           type="date"
           name="birthday"

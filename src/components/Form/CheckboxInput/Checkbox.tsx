@@ -1,5 +1,7 @@
 import React, { ChangeEvent } from 'react';
+// eslint-disable-next-line import/no-cycle
 import { ComponentBaseInterface } from '../Form';
+
 interface InterfaceCheckbox extends ComponentBaseInterface {
   checkboxChangeHandler: (event: ChangeEvent<HTMLInputElement>) => void;
 }
