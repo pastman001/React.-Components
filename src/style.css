@@ -2,22 +2,18 @@ header {
   padding: 20px;
 }
 .main__container {
-  margin: 5% 20%;
+  margin: 5%;
   background-color: rgb(212, 192, 167);
-  min-width: 500px;
-  min-height: 500px;
 }
 
 .grid__container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 30% 30% 30%;
 }
 .container {
   border: 1px black solid;
-  max-width: 200px;
-  max-height: 200px;
-  overflow: hidden;
   margin: 10px;
+  word-wrap: break-word;
 }
 img {
   display: block;

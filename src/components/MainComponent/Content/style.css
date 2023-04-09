@@ -6,3 +6,17 @@
 .container__content {
   font-size: 10px;
 }
+.paginationButton {
+  min-width: 20px;
+  min-height: 20px;
+  margin: 10px;
+  padding: 10px;
+}
+.paginationButton button {
+  margin: 10px;
+  border-radius: 30%;
+  min-width: 3em;
+}
+.pagination__wrapper {
+  padding: 10px 10%;
+}

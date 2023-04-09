@@ -14,3 +14,17 @@ export interface ArraySubmit extends ArrayBase {
   imgFile?: (MediaSource | Blob)[];
 }
 export type StoreOnly = { store: ArrayMain[] };
+
+export type CharacterType = {
+  birth: string;
+  death: string;
+  gender: string;
+  hair: string;
+  height: string;
+  name: string;
+  race: string;
+  realm: string;
+  spouse: string;
+  wikiUrl: string;
+  _id: string;
+};

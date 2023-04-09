@@ -1,23 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './style.css';
 
-export function SearchBar() {
-  const localStorageSearchArea = localStorage.getItem('searchArea');
+type SearchInputType = { searchArea: string };
 
-  const [state, setState] = useState({
-    searchArea: localStorageSearchArea !== null ? localStorageSearchArea : '',
-  });
+type PropsType = {
+  searchInput: SearchInputType;
+  setSearchInput: React.Dispatch<React.SetStateAction<SearchInputType>>;
+  foo: () => void;
+};
 
-  useEffect(() => {
-    localStorage.setItem('searchArea', state.searchArea);
-  });
-
+export const SearchBar: React.FC<PropsType> = ({ searchInput, setSearchInput, foo }) => {
   const changeHandler: React.ChangeEventHandler<HTMLInputElement> = (event) => {
-    setState({ searchArea: event.target.value });
+    setSearchInput({ searchArea: event.target.value });
   };
 
   const clickHandler = () => {
-    setState({ searchArea: '' });
+    foo();
   };
 
   return (
@@ -28,11 +26,11 @@ export function SearchBar() {
         name="searchArea"
         type="text"
         onChange={changeHandler}
-        value={state.searchArea}
+        value={searchInput.searchArea}
       />
       <button className="search__button" onClick={clickHandler} type="button">
         click me
       </button>
     </div>
   );
-}
+};

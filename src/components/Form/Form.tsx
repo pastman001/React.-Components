@@ -1,7 +1,6 @@
 import React, { ChangeEvent, useState } from 'react';
 import { FieldErrors, SubmitHandler, UseFormRegister, useForm } from 'react-hook-form';
 import { Birthday, Checkbox, Name, Option, Radio, Surname } from '.';
-import { StoreState } from '../../App';
 import { ArrayMain, ArraySubmit } from '../../data/types/type';
 import { CardList } from './CardList';
 import './style.css';
@@ -12,7 +11,7 @@ export interface ComponentBaseInterface {
   errors: FieldErrors<ArraySubmit>;
 }
 
-export const Form: React.FC<StoreState> = ({ store, setStore }) => {
+export const Form: React.FC = () => {
   const [inputValue, setInputValue] = useState<ArrayMain>({
     name: '',
     surname: '',
@@ -40,7 +39,6 @@ export const Form: React.FC<StoreState> = ({ store, setStore }) => {
       checkbox: false,
     });
     const imgData = { ...data, imgFile: imgFile?.[0] };
-    setStore([...store, imgData]);
     setCardsLits([...cardsList, imgData]);
   };
 
