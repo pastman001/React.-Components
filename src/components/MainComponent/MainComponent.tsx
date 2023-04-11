@@ -25,14 +25,13 @@ export const MainComponent: React.FC<StoreType> = ({ store, setStore }) => {
         },
       })
       .then((response) => {
-        console.log(response.data);
         setStore(response.data.docs);
         setPages(response.data.pages);
       });
   };
   useEffect(() => {
     localStorage.setItem('searchArea', searchInput.searchArea);
-  }, []);
+  }, [searchInput.searchArea]);
   const foo = () => {
     sendReq();
   };
