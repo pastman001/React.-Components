@@ -1,15 +1,14 @@
 import React, { ChangeEvent, useState } from 'react';
-import { FieldErrors, SubmitHandler, UseFormRegister, useForm } from 'react-hook-form';
-import { Birthday, Checkbox, Name, Option, Radio, Surname } from '.';
+import { SubmitHandler, useForm } from 'react-hook-form';
 import { ArrayMain, ArraySubmit } from '../../data/types/type';
+import { Birthday } from './BirthdayInput';
 import { CardList } from './CardList';
+import { Checkbox } from './CheckboxInput';
+import { Name } from './NameInput';
+import { Option } from './OptionInput';
+import { Radio } from './RadioInput';
+import { Surname } from './SurnameInput';
 import './style.css';
-
-export interface ComponentBaseInterface {
-  inputValue: ArrayMain;
-  register: UseFormRegister<ArraySubmit>;
-  errors: FieldErrors<ArraySubmit>;
-}
 
 export const Form: React.FC = () => {
   const [inputValue, setInputValue] = useState<ArrayMain>({

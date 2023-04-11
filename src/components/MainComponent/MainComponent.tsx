@@ -1,9 +1,9 @@
 import React, { useCallback, useEffect, useState } from 'react';
-// eslint-disable-next-line import/no-cycle
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import { StoreType } from '../../App';
-import { Content, SearchBar } from './index';
+import { StoreType } from '../../data/types/type';
+import { Content } from './Content';
+import { SearchBar } from './SearchBar';
 import './style.css';
 
 export const MainComponent: React.FC<StoreType> = ({ store, setStore }) => {

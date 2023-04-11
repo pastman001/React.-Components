@@ -1,7 +1,4 @@
-/* eslint-disable no-plusplus */
-/* eslint-disable consistent-return */
-/* eslint-disable array-callback-return */
-/* eslint-disable react/no-array-index-key */
+/* eslint no-underscore-dangle: ["error", { "allow": ["_id"] }] */
 import React from 'react';
 import { CharacterType } from '../../../data/types/type';
 import './style.css';
@@ -16,9 +13,9 @@ export const Content: React.FC<PropsType> = ({ store, pages, setCurrentPage }) =
   const clickHandler = (value: number) => {
     setCurrentPage(value);
   };
-  const mainContent = store.map((item, index) => {
+  const mainContent = store.map((item) => {
     return (
-      <div className="container" key={index}>
+      <div className="container" key={item._id}>
         {item.name !== 'NaN' && <div className="container__header">{item.name}</div>}
         {item.race !== 'NaN' && <div className="container__content">{item.race}</div>}
         {item.gender !== 'NaN' && <div className="container__content">{item.gender}</div>}
@@ -33,13 +30,13 @@ export const Content: React.FC<PropsType> = ({ store, pages, setCurrentPage }) =
     );
   });
   const paginationA = [];
-  for (let i = 1; i <= pages; i++) {
+  for (let i = 1; i <= pages; i += 1) {
     paginationA.push(i);
   }
   const pagination = paginationA.map((item, index) => {
     const link = `page=${index + 1}`;
     return (
-      <span key={index} className="paginationButton">
+      <span key={item} className="paginationButton">
         <a href={link}>
           <button
             type="button"

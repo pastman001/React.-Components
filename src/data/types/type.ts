@@ -1,3 +1,5 @@
+import { FieldErrors, UseFormRegister } from 'react-hook-form';
+
 interface ArrayBase {
   imgUrl?: string;
   name: string;
@@ -28,3 +30,12 @@ export type CharacterType = {
   wikiUrl: string;
   _id: string;
 };
+export type StoreType = {
+  store: CharacterType[];
+  setStore: React.Dispatch<React.SetStateAction<CharacterType[]>>;
+};
+export interface ComponentBaseInterface {
+  inputValue: ArrayMain;
+  register: UseFormRegister<ArraySubmit>;
+  errors: FieldErrors<ArraySubmit>;
+}

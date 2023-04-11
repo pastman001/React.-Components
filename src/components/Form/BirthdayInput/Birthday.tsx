@@ -1,6 +1,5 @@
 import React, { ChangeEvent } from 'react';
-// eslint-disable-next-line import/no-cycle
-import { ComponentBaseInterface } from '../Form';
+import { ComponentBaseInterface } from '../../../data/types/type';
 
 interface InterfaceInput extends ComponentBaseInterface {
   changeHandler: (event: ChangeEvent<HTMLInputElement>) => void;

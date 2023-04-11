@@ -1,13 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { AboutUs, Form, MainComponent, Navigation, UnknownPage } from '.';
 import type { CharacterType } from './data/types/type';
 import './style.css';
-
-export type StoreType = {
-  store: CharacterType[];
-  setStore: React.Dispatch<React.SetStateAction<CharacterType[]>>;
-};
 
 export const App = () => {
   const [store, setStore] = useState<CharacterType[]>([]);

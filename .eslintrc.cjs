@@ -47,7 +47,6 @@ module.exports = {
     'react/function-component-definition': 'off',
     'import/prefer-default-export': 'off',
     'react/jsx-props-no-spreading': 'off',
-    'import/no-cycle': 'off',
   },
   settings: {
     react: {
