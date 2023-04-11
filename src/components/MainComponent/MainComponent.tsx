@@ -17,6 +17,7 @@ export const MainComponent: React.FC<StoreType> = ({ store, setStore }) => {
   const [isNoData, setIsNoData] = useState(true);
   const sendReq = useCallback(
     (value?: string) => {
+      setIsNoData(true);
       let url = `https://the-one-api.dev/v2/character?limit=100&page=${currentPage}&name=/${value}/i`;
       if (value === undefined) {
         url = `https://the-one-api.dev/v2/character?limit=100&page=${currentPage}`;
@@ -32,8 +33,6 @@ export const MainComponent: React.FC<StoreType> = ({ store, setStore }) => {
         .then((response) => {
           setStore(response.data.docs);
           setPages(response.data.pages);
-        })
-        .then(() => {
           setIsNoData(false);
         });
     },
@@ -49,7 +48,7 @@ export const MainComponent: React.FC<StoreType> = ({ store, setStore }) => {
     <div>
       <SearchBar searchInput={searchInput} setSearchInput={setSearchInput} sendReq={sendReq} />
       {isNoData && <div>Now loading...</div>}
-      <Content store={store} pages={pages} setCurrentPage={setCurrentPage} />
+      {!isNoData && <Content store={store} pages={pages} setCurrentPage={setCurrentPage} />}
     </div>
   );
 };
