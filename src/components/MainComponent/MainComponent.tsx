@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 // eslint-disable-next-line import/no-cycle
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
@@ -14,30 +14,33 @@ export const MainComponent: React.FC<StoreType> = ({ store, setStore }) => {
   const [searchInput, setSearchInput] = useState({
     searchArea: localStorageSearchArea !== null ? localStorageSearchArea : '',
   });
-  const sendReq = (value?: string) => {
-    let url = `https://the-one-api.dev/v2/character?limit=100&page=${currentPage}&name=/${value}/i`;
-    if (value === undefined) {
-      url = `https://the-one-api.dev/v2/character?limit=100&page=${currentPage}`;
-    }
-    const token = 'VNOmxjiROYs5pks22sjD';
-    const str = `Bearer ${token}`;
-    axios
-      .get(url, {
-        headers: {
-          Authorization: str,
-        },
-      })
-      .then((response) => {
-        setStore(response.data.docs);
-        setPages(response.data.pages);
-      });
-  };
+  const sendReq = useCallback(
+    (value?: string) => {
+      let url = `https://the-one-api.dev/v2/character?limit=100&page=${currentPage}&name=/${value}/i`;
+      if (value === undefined) {
+        url = `https://the-one-api.dev/v2/character?limit=100&page=${currentPage}`;
+      }
+      const token = 'VNOmxjiROYs5pks22sjD';
+      const str = `Bearer ${token}`;
+      axios
+        .get(url, {
+          headers: {
+            Authorization: str,
+          },
+        })
+        .then((response) => {
+          setStore(response.data.docs);
+          setPages(response.data.pages);
+        });
+    },
+    [currentPage, setStore]
+  );
   useEffect(() => {
     localStorage.setItem('searchArea', searchInput.searchArea);
   }, [searchInput.searchArea]);
   useEffect(() => {
     sendReq();
-  }, [currentPage]); // Добавить функцию
+  }, [currentPage, sendReq]);
   return (
     <div>
       <SearchBar searchInput={searchInput} setSearchInput={setSearchInput} sendReq={sendReq} />
