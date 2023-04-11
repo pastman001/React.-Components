@@ -6,16 +6,16 @@ type SearchInputType = { searchArea: string };
 type PropsType = {
   searchInput: SearchInputType;
   setSearchInput: React.Dispatch<React.SetStateAction<SearchInputType>>;
-  foo: () => void;
+  sendReq: (arg: string) => void;
 };
 
-export const SearchBar: React.FC<PropsType> = ({ searchInput, setSearchInput, foo }) => {
+export const SearchBar: React.FC<PropsType> = ({ searchInput, setSearchInput, sendReq }) => {
   const changeHandler: React.ChangeEventHandler<HTMLInputElement> = (event) => {
     setSearchInput({ searchArea: event.target.value });
   };
 
   const clickHandler = () => {
-    foo();
+    sendReq(searchInput.searchArea);
   };
 
   return (

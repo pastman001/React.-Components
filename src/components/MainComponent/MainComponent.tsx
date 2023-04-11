@@ -14,8 +14,11 @@ export const MainComponent: React.FC<StoreType> = ({ store, setStore }) => {
   const [searchInput, setSearchInput] = useState({
     searchArea: localStorageSearchArea !== null ? localStorageSearchArea : '',
   });
-  const sendReq = () => {
-    const url = `https://the-one-api.dev/v2/character?limit=100&page=${currentPage}&name=/${searchInput.searchArea}/i`;
+  const sendReq = (value?: string) => {
+    let url = `https://the-one-api.dev/v2/character?limit=100&page=${currentPage}&name=/${value}/i`;
+    if (value === undefined) {
+      url = `https://the-one-api.dev/v2/character?limit=100&page=${currentPage}`;
+    }
     const token = 'VNOmxjiROYs5pks22sjD';
     const str = `Bearer ${token}`;
     axios
@@ -32,15 +35,12 @@ export const MainComponent: React.FC<StoreType> = ({ store, setStore }) => {
   useEffect(() => {
     localStorage.setItem('searchArea', searchInput.searchArea);
   }, [searchInput.searchArea]);
-  const foo = () => {
-    sendReq();
-  };
   useEffect(() => {
     sendReq();
   }, [currentPage]); // Добавить функцию
   return (
     <div>
-      <SearchBar searchInput={searchInput} setSearchInput={setSearchInput} foo={foo} />
+      <SearchBar searchInput={searchInput} setSearchInput={setSearchInput} sendReq={sendReq} />
       <Content store={store} pages={pages} setCurrentPage={setCurrentPage} />
     </div>
   );
