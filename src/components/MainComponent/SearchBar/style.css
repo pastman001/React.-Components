@@ -1,0 +1,17 @@
+.search__container {
+  margin: 10px;
+}
+
+.search__head {
+  min-width: 10%;
+  font-size: 1em;
+}
+
+.search__input {
+  margin: 10px;
+  min-width: 60%;
+}
+
+.search__button {
+  min-width: 20%;
+}

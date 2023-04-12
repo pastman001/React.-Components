@@ -1,0 +1,23 @@
+header {
+  padding: 20px;
+}
+.main__container {
+  margin: 5%;
+  background-color: rgb(212, 192, 167);
+}
+
+.grid__container {
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+}
+.container {
+  border: 1px black solid;
+  margin: 10px;
+  word-wrap: break-word;
+}
+img {
+  display: block;
+  max-width: 100px;
+  max-height: 100px;
+  margin: 0 auto;
+}

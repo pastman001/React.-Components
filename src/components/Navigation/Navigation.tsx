@@ -1,0 +1,18 @@
+import { Link } from 'react-router-dom';
+import './style.css';
+
+export function Navigation() {
+  return (
+    <header>
+      <Link className="link__button" to="/">
+        Main
+      </Link>
+      <Link className="link__button" to="/aboutUs">
+        About Us
+      </Link>
+      <Link className="link__button" to="/form">
+        Form
+      </Link>
+    </header>
+  );
+}
